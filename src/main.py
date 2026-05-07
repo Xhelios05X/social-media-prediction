@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.preprocessing import MinMaxScaler
 
 FILENAME = "../Teen_Mental_Health_Dataset.csv"
 
@@ -39,6 +40,9 @@ def data_preprocessing(filename = FILENAME) -> object:
 
 def main() -> None:
     X, y = data_preprocessing()
+
+    scaler = MinMaxScaler()
+    X_normalized = scaler.fit_transform()
     
 
 
